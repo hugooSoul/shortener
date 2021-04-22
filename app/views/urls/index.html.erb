@@ -13,3 +13,9 @@
 <% end %>
 
 <%= link_to 'Create another link', new_url_path %>
+
+<% if user_signed_in? %>
+  <%= button_to "Sing out", destroy_user_session_path, method: :delete  %>
+<% else %>
+    <%= link_to "Sign_in", new_user_session_path %>
+<% end %>
