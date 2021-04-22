@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <h2><%= current_user.name %></h2>
+<% else %>
+    <h2>Weelcome to Shortener page</h2>
+<% end %>
+
+<% if user_signed_in? %>
+  <% current_user.urls.each do |url| %>
+    <ul>
+      <li><%= url.name %> - <%= url.short_url %> - <%= url.long_url %></li>
+    </ul>
+  <% end %>
+<% end %>
